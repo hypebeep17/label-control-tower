@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Label Control Tower</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        background: #050505;
+        overflow-y: scroll;
+      }
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(rgba(232,168,56,0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(232,168,56,0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, black 10%, transparent 100%);
+        -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, black 10%, transparent 100%);
+      }
+      #root { position: relative; z-index: 1; }
+      ::-webkit-scrollbar { width: 4px; height: 4px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: #1E1E1E; border-radius: 2px; }
+      ::-webkit-scrollbar-thumb:hover { background: #333; }
+      input[type="file"]::-webkit-file-upload-button {
+        font-family: 'DM Sans', system-ui, sans-serif;
+        font-size: 12px; font-weight: 600;
+        background: #141414; color: #888;
+        border: 1px solid #1E1E1E; border-radius: 6px;
+        padding: 4px 12px; cursor: pointer; margin-right: 8px;
+      }
+      input[type="file"]::-webkit-file-upload-button:hover { background: #1E1E1E; color: #E8E8E8; }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 1; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
